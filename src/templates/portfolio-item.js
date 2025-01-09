@@ -10,7 +10,7 @@ const ProjectTemplate = ({ data }) => {
 	return (
 		<Layout>
 			<h1>{title}</h1>
-			<GatsbyImage image={gatsbyImage} alt="Hur löser vi detta?"></GatsbyImage>
+			<GatsbyImage image={gatsbyImage} alt="En alt text här hur"></GatsbyImage>
 		</Layout>
 	);
 };
