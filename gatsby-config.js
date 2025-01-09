@@ -7,8 +7,10 @@ require('dotenv').config({
 
 module.exports = {
   siteMetadata: {
-    title: `My Gatsby Site`,
-    siteUrl: `https://www.yourdomain.tld`
+    title: `Frida Häggström portfolio`,
+    siteUrl: `https://www.yourdomain.tld`,
+    description: `Min portfolio sida`,
+    author: `Frida Häggström`
   },
   plugins: [{
     resolve: 'gatsby-source-contentful',
