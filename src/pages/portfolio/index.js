@@ -6,15 +6,15 @@ import { container } from "../../styles/portfolio.module.css";
 
 const PortfolioPage = () => {
 	const data = useStaticQuery(graphql`
-query {
-  allContentfulProject {
-    nodes {
-      title
-      slug
-    }
-  }
-}
-`);
+		query {
+ 			 allContentfulProject {
+    		nodes {
+      		title
+      		slug
+   			 }
+  			}
+			}
+	`);
 
 const items = data.allContentfulProject.nodes;
 
@@ -37,18 +37,3 @@ const items = data.allContentfulProject.nodes;
 export const Head = () => <Seo title="Portfolio"></Seo>;
 
 export default PortfolioPage;
-
-
-// Query till ett specifikt item
-
-// query MyQuery {
-//   allContentfulProject {
-//     nodes {
-//       title
-//       id
-//     }
-//   }
-//   contentfulProject(id: {eq: "f613329d-1c4a-5c65-ab7b-d044d5624eb7"}) {
-//     title
-//   }
-// }
