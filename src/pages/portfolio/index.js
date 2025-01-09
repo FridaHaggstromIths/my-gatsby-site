@@ -1,8 +1,8 @@
 import * as React from "react";
 import Layout from "../../components/layout";
-import { container } from "../../styles/portfolio.module.css";
 import { Link, graphql, useStaticQuery } from "gatsby";
 import Seo from "../../components/seo.js";
+import { container } from "../../styles/portfolio.module.css";
 
 const PortfolioPage = () => {
 	const data = useStaticQuery(graphql`
@@ -10,7 +10,7 @@ query {
   allContentfulProject {
     nodes {
       title
-      id
+      slug
     }
   }
 }
