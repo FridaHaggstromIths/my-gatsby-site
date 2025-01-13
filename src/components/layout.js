@@ -35,9 +35,6 @@ import {
 const Layout = ({ children }) => {
 	return (
 		<div className={container}>
-			<header>
-				<h1>Header ett måste?</h1>
-			</header>
 			<nav className={navigation}>
 				<ul className={navigationList}>
 					<li>
@@ -45,6 +42,9 @@ const Layout = ({ children }) => {
 					</li>
 					<li>
 						<Link to="/portfolio">Portfolio</Link>
+					</li>
+					<li>
+						<Link to="/about">About</Link>
 					</li>
 				</ul>
 			</nav>
