@@ -6,7 +6,7 @@ import Seo from "../components/seo";
 
 export const query = graphql`
   query {
-    allContentfulPage(limit: 1, skip: 1) {
+    allContentfulPage(limit: 1, skip: 0) {
       nodes {
         title
         description {

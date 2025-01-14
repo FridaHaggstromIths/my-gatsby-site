@@ -5,48 +5,45 @@ import Layout from "../components/layout";
 import Seo from "../components/seo";
 
 export const query = graphql`
-  query {
-    allContentfulPage(limit: 1, skip: 0) {
-      nodes {
-        title
-        description {
-          description
-        }
-        images {
-					sizes(quality: 90) {
-          gatsbyImageData(
-            layout: CONSTRAINED
-            placeholder: BLURRED
-            resizingBehavior: SCALE
-            width: 500
-
-
-          )
-					}
-        }
-      }
+query {
+  contentfulPage(slug: {eq: "about"}) {
+    title
+    description {
+      description
+    }
+    images {
+      gatsbyImageData(
+        layout: CONSTRAINED
+        placeholder: BLURRED
+        resizingBehavior: SCALE
+        width: 640
+      )
     }
   }
+}
 `;
 
-
 const AboutPage = ({ data }) => {
-  const aboutPageItems = data.allContentfulPage.nodes;
-
-  console.log(aboutPageItems); // en console log för att kolla datan
+  const aboutPageItem = data.contentfulPage;
 
   return (
     <Layout>
-      {aboutPageItems.map((item) => {
-        const image = getImage(item.images[0]);
-        return (
-          <div key={item.title}>
-            <h1>{item.title}</h1>
-            <p>{item.description.description}</p>
-            {image && <GatsbyImage image={image} alt={item.title} />}
-          </div>
-        );
-      })}
+      <div key={aboutPageItem.title}>
+        <h1>{aboutPageItem.title}</h1>
+        <p>{aboutPageItem.description.description}</p>
+        <div>
+          {aboutPageItem.images.map((img, index) => {
+            const image = getImage(img);
+            return (
+              <GatsbyImage
+                key={index}
+                image={image}
+                alt={`${aboutPageItem.title} image ${index + 1}`}
+              />
+            );
+          })}
+        </div>
+      </div>
     </Layout>
   );
 };
@@ -55,6 +52,81 @@ export const Head = () => <Seo title="About Page" />;
 
 export default AboutPage;
 
+
+
+// import { graphql } from "gatsby";
+// import * as React from "react";
+// import { GatsbyImage, getImage } from "gatsby-plugin-image";
+// import Layout from "../components/layout";
+// import Seo from "../components/seo";
+
+// export const query = graphql`
+// query {
+//   contentfulPage(slug: {eq: "about"}) {
+//     title
+//     description {
+//       description
+//     }
+//     images {
+//       gatsbyImageData(
+//         layout: CONSTRAINED
+//         placeholder: BLURRED
+//         resizingBehavior: SCALE
+//         width: 500
+//       )
+//     }
+//   }
+// }
+
+// `;
+
+
+// const AboutPage = ({ data }) => {
+//   console.log(data)
+//   const aboutPageItems = data.contentfulPage;
+
+//   console.log(aboutPageItems);
+
+//   return (
+//     <Layout>
+
+//         const image = getImage(aboutPageItems.images[0]);
+//         return (
+//           <div>
+//             <h1>{aboutPageItems.title}</h1>
+//             <p>{aboutPageItems.description.description}</p>
+//             {image && <GatsbyImage image={aboutPageItems.image} alt={aboutPageItems.title} />}
+//           </div>
+//         );
+
+//     </Layout>
+//   );
+// };
+
+// export const Head = () => <Seo title="About Page" />;
+
+// export default AboutPage;
+
+
+
+// query {
+//   contentfulPage(slug: {eq: "about"}) {
+//     title
+//   }
+// }
+
+// # title
+// # description {
+// #   description
+// # }
+// # images {
+// #   gatsbyImageData(
+// #     layout: CONSTRAINED
+// #     placeholder: BLURRED
+// #     resizingBehavior: SCALE
+// #     width: 500
+// #   )
+// # }
 
 
 // query MyQuery {
