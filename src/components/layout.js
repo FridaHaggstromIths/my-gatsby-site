@@ -1,59 +1,54 @@
-// import * as React from "react";
-
-// const Layout = ({children}) => {
-
-//   return (
-//     <div className="container">
-//       <header>
-//         <h1> Min navbar</h1>
-//       </header>
-
-//       <main>
-//         {children}
-//       </main>
-//       <footer>
-//         Här ska min footer ligga
-//       </footer>
-
-//     </div>
-//   )
-// }
+import React from "react";
+import Menu from "./menu.js"
+import { container} from "../styles/layout.module.css";
 
 
-
-// export default Layout
-
-import * as React from "react";
-import { Link } from "gatsby";
-import {
-	container,
-	navigation,
-	navigationList,
-	mainContent,
-} from "../styles/layout.module.css";
-
-const Layout = ({ children }) => {
+const Layout = ({children}) => {
 	return (
 		<div className={container}>
-			<nav className={navigation}>
-				<ul className={navigationList}>
-					<li>
-						<Link to="/">Hem</Link>
-					</li>
-					<li>
-						<Link to="/portfolio">Portfolio</Link>
-					</li>
-					<li>
-						<Link to="/about">About</Link>
-					</li>
-				</ul>
-			</nav>
-			<main className={mainContent}>{children}</main>
-			<footer>Footer</footer>
+			<Menu />
+			<main> {children}</main>
 		</div>
 	);
 };
 
-export const Head = () => <title>Portfolio</title>;
-
 export default Layout;
+
+
+
+// // export default Layout
+
+// import * as React from "react";
+// import { Link } from "gatsby";
+// import {
+// 	container,
+// 	navigation,
+// 	navigationList,
+// 	mainContent,
+// } from "../styles/layout.module.css";
+
+// const Layout = ({ children }) => {
+// 	return (
+// 		<div className={container}>
+// 			<nav className={navigation}>
+// 				<ul className={navigationList}>
+// 					<li>
+// 						<Link to="/">Hem</Link>
+// 					</li>
+// 					<li>
+// 						<Link to="/portfolio">Portfolio</Link>
+// 					</li>
+// 					<li>
+// 						<Link to="/about">About</Link>
+// 					</li>
+// 				</ul>
+// 			</nav>
+// 			<main className={mainContent}>{children}</main>
+// 			<footer>Footer</footer>
+// 		</div>
+// 	);
+// };
+
+// export const Head = () => <title>Portfolio</title>;
+
+// export default Layout;

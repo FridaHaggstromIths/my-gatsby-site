@@ -3,11 +3,11 @@ import * as React from "react";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import Layout from "../components/layout";
 import Seo from "../components/seo";
+import {container} from "../styles/index.module.css"
 
 export const query = graphql`
   query {
-    allContentfulPage(limit: 1, skip: 0) {
-      nodes {
+    contentfulPage(slug: {eq: "/"}) {
         title
         description {
           description
@@ -22,26 +22,31 @@ export const query = graphql`
         }
       }
     }
-  }
 `;
 
 const HomePage = ({ data }) => {
-  const homePageItems = data.allContentfulPage.nodes;
+  const homePageItems = data.contentfulPage;
 
   console.log(homePageItems); // en console log för att kolla datan
 
   return (
     <Layout>
-      {homePageItems.map((item) => {
-        const image = getImage(item.images[0]);
+      <div key={homePageItems} className ={container}>
+        <h1>{homePageItems.title}</h1>
+        <p>{homePageItems.description.description}</p>
+        <div>
+      {homePageItems.images.map((img, index) => {
+        const image = getImage(img);
         return (
-          <div key={item.title}>
-            <h1>{item.title}</h1>
-            <p>{item.description.description}</p>
-            {image && <GatsbyImage image={image} alt={item.title} />}
-          </div>
+          <GatsbyImage
+          key={index}
+          image={image}
+          aly={`${homePageItems.title} image ${index + 1}`}
+          />
         );
       })}
+      </div>
+      </div>
     </Layout>
   );
 };

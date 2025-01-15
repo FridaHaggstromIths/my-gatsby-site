@@ -3,6 +3,7 @@ import { graphql } from "gatsby";
 import Layout from "../components/layout.js";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
+
 const ProjectTemplate = ({ data }) => {
 	const { title, images } = data.contentfulProject;
 	const gatsbyImage = getImage(images[0]);
