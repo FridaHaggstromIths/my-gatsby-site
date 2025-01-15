@@ -3,6 +3,7 @@ import * as React from "react";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import Layout from "../components/layout";
 import Seo from "../components/seo";
+import {container} from "../styles/index.module.css"
 
 export const query = graphql`
 query {
@@ -28,7 +29,7 @@ const AboutPage = ({ data }) => {
 
   return (
     <Layout>
-      <div key={aboutPageItem.title}>
+      <div key={aboutPageItem.title} className ={container}>
         <h1>{aboutPageItem.title}</h1>
         <p>{aboutPageItem.description.description}</p>
         <div>
