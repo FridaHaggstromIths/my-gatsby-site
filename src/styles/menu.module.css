@@ -13,9 +13,19 @@
   width: 100%;
   color: #fff;
   list-style-type: none;
+  font-size: 1.2rem;
+  font-weight: 600;
 }
 
 .navigationLinks {
-  color:#d78f89;
+  color:#3D4743;
   text-decoration: none;
+}
+
+.navigationLinks:hover {
+  border-bottom: 2px solid #D78F89;
+}
+
+.activeLink {
+  border-bottom: 2px solid #D78F89;
 }

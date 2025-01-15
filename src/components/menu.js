@@ -1,6 +1,6 @@
 import React from "react";
 import { graphql, useStaticQuery, Link} from "gatsby";
-import { navigation, navigationList, navigationLinks } from "../styles/menu.module.css"
+import { navigation, navigationList, navigationLinks, activeLink } from "../styles/menu.module.css"
 
 const Menu = () => {
   const data = useStaticQuery(graphql`
@@ -33,7 +33,7 @@ const Menu = () => {
         <ul className={navigationList}>
           {menuItems.map((item,index) => (
             <li key={index}>
-              <Link className={navigationLinks}to={item.linkTo.slug === "/" ? "/" : `/${item.linkTo.slug}`}>{item.title}
+              <Link className={navigationLinks} activeClassName={activeLink} to={item.linkTo.slug === "/" ? "/" : `/${item.linkTo.slug}`}>{item.title}
               </Link>
             </li>
           ))}
