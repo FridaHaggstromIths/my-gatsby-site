@@ -7,7 +7,7 @@
   align-items: center;
   gap: 70px;
   width: 100%;
-  max-width: 1200px; /* Begränsar bredden för att centrera layouten */
+  max-width: 1200px;
   padding: 60px 40px 60px 60px;
   margin: 0 0 0 20px;
 }

@@ -31,7 +31,6 @@ const HomePage = ({ data }) => {
     <Layout>
       <div key={homePageItems} className={container}>
         <div className={contentWrapper}>
-          {/* Image Container */}
           <div className={imageContainer}>
             {homePageItems.images.map((img, index) => {
               const image = getImage(img);
@@ -45,8 +44,6 @@ const HomePage = ({ data }) => {
               );
             })}
           </div>
-
-          {/* Text Container */}
           <div className={textContainer}>
             <h3>{homePageItems.title}</h3>
             <h1>{homePageItems.description.description}</h1>
