@@ -18,7 +18,7 @@ module.exports = {
       "accessToken": process.env.GATSBY_CONTENTFUL_ACCESS_TOKEN,
       "spaceId": process.env.GATSBY_CONTENTFUL_SPACE_ID
     }
-  }, "gatsby-plugin-image", "gatsby-plugin-sharp", "gatsby-transformer-sharp", "gatsby-plugin-postcss", "gatsby-plugin-sitemap", {
+  }, "gatsby-plugin-image", "gatsby-plugin-sharp", "gatsby-transformer-sharp", "gatsby-plugin-sitemap", {
     resolve: 'gatsby-source-filesystem',
     options: {
       "name": "images",

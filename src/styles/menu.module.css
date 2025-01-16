@@ -1,0 +1,31 @@
+.navigation {
+  display: flex;
+  background-color: #faf9f7;
+  width: 100%;
+  height: 70px;
+}
+
+.navigationList {
+  display: flex;
+  justify-content:left;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  color: #fff;
+  list-style-type: none;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.navigationLinks {
+  color:#3D4743;
+  text-decoration: none;
+}
+
+.navigationLinks:hover {
+  border-bottom: 2px solid #D78F89;
+}
+
+.activeLink {
+  border-bottom: 2px solid #D78F89;
+}
