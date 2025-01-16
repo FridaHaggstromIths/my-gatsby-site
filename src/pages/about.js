@@ -45,8 +45,8 @@ const AboutPage = ({ data }) => {
             })}
           </div>
           <div className={textContainer}>
-            <h3>{aboutPageItem.title}</h3>
-            <h1>{aboutPageItem.description.description}</h1>
+            <h1>{aboutPageItem.title}</h1>
+            <h3>"{aboutPageItem.description.description}"</h3>
           </div>
         </div>
       </div>

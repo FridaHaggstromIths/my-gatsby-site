@@ -46,7 +46,7 @@ const HomePage = ({ data }) => {
           </div>
           <div className={textContainer}>
             <h3>{homePageItems.title}</h3>
-            <h1>{homePageItems.description.description}</h1>
+            <h1>"{homePageItems.description.description}"</h1>
           </div>
         </div>
       </div>
