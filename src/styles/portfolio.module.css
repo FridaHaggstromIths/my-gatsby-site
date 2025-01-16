@@ -4,15 +4,16 @@
   justify-content: center;
   gap: 30px;
   color: #3D4743;
-  height: 100%;
+  margin: 3vh 0 5vh 0;
+  /* height: 100vh; */
 }
 
 .card {
   background-color: #fff;
   border-radius: 10px;
   border: 1px solid #ddd;
-  width: 45%;  /* Bredd på varje kort (2 per rad) */
-  max-width: 500px;  /* Maximal bredd på kortet */
+  width: 45%;
+  max-width: 500px;
   padding: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   display: flex;
@@ -48,4 +49,18 @@
 
 .card a:hover {
   color: #88917E;
+}
+
+@media (max-width: 768px) {
+
+  .container {
+    padding: 1rem;
+    margin:0;
+  }
+
+  .card {
+    width: 90%;
+    padding: 0.5rem;
+  }
+
 }

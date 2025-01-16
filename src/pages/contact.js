@@ -2,7 +2,7 @@ import { graphql } from "gatsby";
 import * as React from "react";
 import Layout from "../components/layout";
 import Seo from "../components/seo";
-import { container, contentWrapper, textContainer } from "../styles/index.module.css";
+import { container, contentWrapper, textContainer, socialLink } from "../styles/contact.module.css";
 
 export const query = graphql`
   query {
@@ -24,11 +24,12 @@ const ContactPage = ({ data }) => {
       <div key={contactPageItems} className={container}>
         <div className={contentWrapper}>
           <div className={textContainer}>
-            <h3>{contactPageItems.title}</h3>
-            <h1>{contactPageItems.description.description}</h1>
+            <h1>{contactPageItems.title}</h1>
+            <h3>{contactPageItems.description.description}</h3>
 
             {contactPageItems.socialLinks && (
               <a
+                className={socialLink}
                 href={contactPageItems.socialLinks}
                 target="_blank"
                 rel="noopener noreferrer"

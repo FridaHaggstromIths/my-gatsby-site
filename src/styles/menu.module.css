@@ -3,6 +3,7 @@
   background-color: #faf9f7;
   width: 100%;
   height: 70px;
+  padding: 2rem 0 0 0;
 }
 
 .navigationList {
@@ -28,4 +29,14 @@
 
 .activeLink {
   border-bottom: 2px solid #D78F89;
+}
+
+@media (max-width: 768px) {
+  .navigation {
+    padding: 0;
+  }
+
+  .navigationList {
+   padding: 0 0 0 26px;
+  }
 }
