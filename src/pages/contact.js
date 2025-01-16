@@ -11,7 +11,7 @@ export const query = graphql`
       description {
         description
       }
-      socialLink
+      socialLinks
     }
   }
 `;
@@ -26,10 +26,10 @@ const ContactPage = ({ data }) => {
           <div className={textContainer}>
             <h3>{contactPageItems.title}</h3>
             <h1>{contactPageItems.description.description}</h1>
-            {/* Render single social link */}
-            {contactPageItems.socialLink && (
+
+            {contactPageItems.socialLinks && (
               <a
-                href={contactPageItems.socialLink}
+                href={contactPageItems.socialLinks}
                 target="_blank"
                 rel="noopener noreferrer"
               >

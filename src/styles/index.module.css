@@ -15,6 +15,7 @@
 .textContainer {
   flex: 1;
   text-align: left;
+  padding: 1rem 0;
 }
 
 .imageContainer {

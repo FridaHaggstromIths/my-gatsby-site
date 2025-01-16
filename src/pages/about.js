@@ -31,7 +31,6 @@ const AboutPage = ({ data }) => {
     <Layout>
       <div key={aboutPageItem.title} className={container}>
         <div className={contentWrapper}>
-          {/* Image Container */}
           <div className={imageContainer}>
             {aboutPageItem.images.map((img, index) => {
               const image = getImage(img);
@@ -45,8 +44,6 @@ const AboutPage = ({ data }) => {
               );
             })}
           </div>
-
-          {/* Text Container */}
           <div className={textContainer}>
             <h3>{aboutPageItem.title}</h3>
             <h1>{aboutPageItem.description.description}</h1>
