@@ -21,7 +21,7 @@ const items = data.allContentfulProject.nodes;
 	return (
 		<Layout>
 			<div className={container}>
-				<h1>Välkommen till min portfoliosida!</h1>
+				<h1>Portfolio</h1>
 				<ul>
 					{items.map((item) => (
 						<li key={item.slug}>
