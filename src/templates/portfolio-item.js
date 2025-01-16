@@ -5,12 +5,13 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
 
 const ProjectTemplate = ({ data }) => {
-	const { title, images } = data.contentfulProject;
+	const { title, images, description } = data.contentfulProject;
 	const gatsbyImage = getImage(images[0]);
 
 	return (
 		<Layout>
 			<h1>{title}</h1>
+			<p>{description.description}</p>
 			<GatsbyImage image={gatsbyImage} alt="En alt text här hur"></GatsbyImage>
 		</Layout>
 	);
@@ -22,6 +23,9 @@ export const query = graphql`
 	query ($slug: String!) {
 		contentfulProject(slug: { eq: $slug }) {
 			title
+			description {
+      description
+    }
 			images {
 				gatsbyImageData(layout: CONSTRAINED, width: 800, placeholder: BLURRED)
 			}

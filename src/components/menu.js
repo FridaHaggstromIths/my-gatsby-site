@@ -5,7 +5,7 @@ import { navigation, navigationList, navigationLinks, activeLink } from "../styl
 const Menu = () => {
   const data = useStaticQuery(graphql`
     query {
-      allContentfulMenuItem {
+      allContentfulMenuItem (sort: {order: ASC}){
         nodes {
           title
           linkTo {
@@ -16,6 +16,7 @@ const Menu = () => {
       }
     }
     `);
+
     const menuItems = data.allContentfulMenuItem.nodes;
 
     if (!menuItems || menuItems.length === 0) {
@@ -23,7 +24,7 @@ const Menu = () => {
       return (
         <div>
           Error loading menu items, please contact me if you see this error
-          message
+          message.
         </div>
       )
     }
