@@ -2,6 +2,7 @@ import * as React from "react";
 import { graphql } from "gatsby";
 import Layout from "../components/layout.js";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import { container, card } from "../styles/portfolio.module.css";
 
 
 const ProjectTemplate = ({ data }) => {
@@ -10,9 +11,13 @@ const ProjectTemplate = ({ data }) => {
 
 	return (
 		<Layout>
+			<div className={container}>
+				<div className={card}>
 			<h1>{title}</h1>
 			<p>{description.description}</p>
-			<GatsbyImage image={gatsbyImage} alt="En alt text här hur"></GatsbyImage>
+			<GatsbyImage image={gatsbyImage} alt={`Image for ${title}`}></GatsbyImage>
+			</div>
+			</div>
 		</Layout>
 	);
 };
