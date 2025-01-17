@@ -1,8 +1,8 @@
 import * as React from "react"
 import { Link } from "gatsby"
-import { text, navlink, projectlinks } from "../styles/404.module.css"
 import Layout from "../components/layout";
 import Seo from "../components/seo"
+import { text, navlink, projectlinks } from "../styles/404.module.css"
 
 const NotFoundPage = () => {
   return (

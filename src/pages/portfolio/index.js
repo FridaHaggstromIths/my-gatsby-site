@@ -26,7 +26,6 @@ export const query = graphql`
     }
   }
 `;
-
 const PortfolioPage = ({ data }) => {
   const items = data.allContentfulProject.nodes;
 

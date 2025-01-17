@@ -21,7 +21,6 @@ const ProjectTemplate = ({ data }) => {
 		</Layout>
 	);
 };
-
 export default ProjectTemplate;
 
 export const query = graphql`
