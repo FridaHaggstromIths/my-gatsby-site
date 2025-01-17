@@ -60,7 +60,15 @@
 
   .card {
     width: 90%;
-    padding: 0.5rem;
+    padding: 1rem;
+  }
+
+  .card h1 {
+    font-size: 1rem;
+  }
+
+  .card a {
+    font-size: 0.8rem;
   }
 
 }

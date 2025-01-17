@@ -17,7 +17,7 @@ query {
         layout: CONSTRAINED
         placeholder: BLURRED
         resizingBehavior: SCALE
-        width: 640
+        width: 500
       )
     }
   }

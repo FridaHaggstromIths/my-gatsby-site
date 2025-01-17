@@ -2,7 +2,8 @@ import { graphql } from "gatsby";
 import * as React from "react";
 import Layout from "../components/layout";
 import Seo from "../components/seo";
-import { container, contentWrapper, textContainer, socialLink } from "../styles/contact.module.css";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import { container, contentWrapper, textContainer, socialLink, imgOval } from "../styles/contact.module.css";
 
 export const query = graphql`
   query {
@@ -11,6 +12,13 @@ export const query = graphql`
       description {
         description
       }
+      images {
+          gatsbyImageData(
+            layout: CONSTRAINED
+            placeholder: BLURRED
+            width: 500
+          )
+        }
       socialLinks
     }
   }
@@ -37,6 +45,17 @@ const ContactPage = ({ data }) => {
                 LinkedIn
               </a>
             )}
+             {contactPageItems.images.map((img, index) => {
+                          const image = getImage(img);
+                          return (
+                            <GatsbyImage
+                              key={index}
+                              image={image}
+                              alt={`${contactPageItems.title} image ${index + 1}`}
+                              className={imgOval}
+                            />
+                          );
+                        })}
           </div>
         </div>
       </div>
@@ -47,42 +66,3 @@ const ContactPage = ({ data }) => {
 export const Head = () => <Seo title="Contact Page" />;
 
 export default ContactPage;
-
-
-// import { graphql } from "gatsby";
-// import * as React from "react";
-// import Layout from "../components/layout";
-// import Seo from "../components/seo";
-// import { container, contentWrapper, textContainer} from "../styles/index.module.css";
-
-// export const query = graphql`
-//   query {
-//   contentfulPage(slug: {eq: "contact"}) {
-//     title
-//     description {
-//       description
-//     }
-//   }
-// }
-// `;
-
-// const ContactPage = ({ data }) => {
-//   const contactPageItems = data.contentfulPage;
-
-//   return (
-//     <Layout>
-//       <div key={contactPageItems} className={container}>
-//         <div className={contentWrapper}>
-//           <div className={textContainer}>
-//             <h3>{contactPageItems.title}</h3>
-//             <h1>{contactPageItems.description.description}</h1>
-//           </div>
-//         </div>
-//       </div>
-//     </Layout>
-//   );
-// };
-
-// export const Head = () => <Seo title="Contact Page" />;
-
-// export default ContactPage;
