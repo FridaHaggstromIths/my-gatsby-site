@@ -18,8 +18,8 @@ export const query = graphql`
           gatsbyImageData(
             layout: CONSTRAINED
             placeholder: BLURRED
-            resizingBehavior: SCALE
-            width: 400
+            # resizingBehavior: SCALE
+            width: 800
           )
         }
       }
