@@ -33,9 +33,6 @@ export const query = graphql`
 			images {
 				gatsbyImageData(layout: CONSTRAINED, width: 800, placeholder: BLURRED)
 			}
-			# images {
-			# 	gatsbyImageData(layout: CONSTRAINED, width: 800, placeholder: BLURRED)
-			# }
 		}
 	}
 `;

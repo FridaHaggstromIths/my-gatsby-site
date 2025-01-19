@@ -3,7 +3,7 @@ import * as React from "react";
 import Layout from "../components/layout";
 import Seo from "../components/seo";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
-import { container, contentWrapper, textContainer, socialLink, imgOval } from "../styles/contact.module.css";
+import { container, contentWrapper, textContainer, socialLink, imgOval, imageContainer } from "../styles/contact.module.css";
 
 export const query = graphql`
   query {
@@ -45,6 +45,9 @@ const ContactPage = ({ data }) => {
                 LinkedIn
               </a>
             )}
+
+          </div>
+          <div className={imageContainer}>
              {contactPageItems.images.map((img, index) => {
                           const image = getImage(img);
                           return (
@@ -56,7 +59,7 @@ const ContactPage = ({ data }) => {
                             />
                           );
                         })}
-          </div>
+              </div>
         </div>
       </div>
     </Layout>
