@@ -1,4 +1,30 @@
+.notFoundContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin:5rem 0 0 0;
+}
+
 .text {
-  font-size: 2rem;
-  font-weight: 600;
+  color: #3D4743;
+  padding: 0 0 2rem 0;
+}
+
+.projectlinks {
+  color: #3D4743;
+  text-decoration: none;
+}
+
+.projectlinks:hover {
+  border-bottom: 2px solid #D78F89;
+}
+
+
+
+@media (max-width: 768px) {
+  .text {
+    font-size: 1.5rem;
+  }
+
 }

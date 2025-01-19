@@ -11,7 +11,6 @@
   gap: 70px;
   width: 100%;
   max-width: 1200px;
-  height: 100vh;
 }
 
 .textContainer {
@@ -25,22 +24,16 @@
 .socialLink{
   color: #3D4743;
   text-decoration: none;
-  padding: 3rem 0;
 }
 
-
-.socialLink a {
-  color: #3D4743;
-  text-decoration: none;
-  font-weight: bold;
-  transition: color 0.3s ease;
-  padding: 1rem 0 0 0;
+.socialLink:hover {
+  border-bottom: 2px solid #D78F89;
 }
 
-.socialLink a:hover {
-  color: #88917E;
+.imageContainer {
+  display: flex;
+  justify-content: center;
 }
-
 
 .imgOval {
   border-radius: 50%;
@@ -56,10 +49,19 @@
     flex-direction: column;
     align-items: center;
     padding: 0 0 1rem 0;
+    gap:0;
   }
   .textContainer {
     text-align: left;
-    padding: 5rem 2rem;
+    padding: 3rem 2rem;
+  }
+
+  .textContainer h1 {
+    font-size: 1.5rem;
+  }
+
+  .textContainer h3 {
+    font-size: 1rem;
   }
 
   .imgOval {
